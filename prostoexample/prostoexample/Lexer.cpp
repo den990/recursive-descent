@@ -410,11 +410,11 @@ void Lexer::ListStms()
 
     St();
 
-    if (token != Token::CBracket)
+    if (token != Token::End)
     {
         if (count == tokenList.size())
         {
-            throw std::exception("expected }");
+            throw std::exception("expected END");
         }
         ListStms();
     }
@@ -571,14 +571,14 @@ void Lexer::For()
     ListStmsElse();
     if (GetToken() != Token::EndFor)
     {
-        throw std::exception("Expected 'rof'");
+        throw std::exception("Expected 'ENDFOR'");
     }
 }
 
 
 void Lexer::parseVariables() {
     if (GetToken() != Token::Var) {
-        throw std::exception("Expected var");
+        throw std::exception("Expected VAR");
     }
     while (token != Token::Rav) {
         SectionVar();
@@ -587,16 +587,16 @@ void Lexer::parseVariables() {
 
 void Lexer::parseSt() {
     if (GetToken() != Token::Begin) {
-        throw std::exception("expected begin");
+        throw std::exception("expected BEGIN");
     }
 
     ListStms();
 
-    if (GetToken() != Token::Endm) {
-        throw std::exception("expected endm");
+    if (GetToken() != Token::Nuf) {
+        throw std::exception("expected NUF");
     }
     if (GetMoreTokens() != Token::EndVector) {
-        throw std::exception("error you have code after endm");
+        throw std::exception("error you have code after end");
     }
 }
 
@@ -607,7 +607,8 @@ void Lexer::parse() {
     parseConsts();
     parseVariables();
     parseSt();
-    printTokens(tokenList);
+    //printTokens(tokenList);
+    std::cout << "OK" << std::endl;
 
 }
 std::string Lexer::tokenToStringFunc(Token token) {

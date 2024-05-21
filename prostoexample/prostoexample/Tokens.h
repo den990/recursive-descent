@@ -61,7 +61,8 @@ enum class Token {
     Tea,
     EndVector,
     Begin, 
-    End
+    End,
+    Nuf
 };
 inline std::map<Token, std::string> tokenToString = {
     {Token::Const, "Const"},
@@ -121,8 +122,8 @@ inline std::map<Token, std::string> tokenToString = {
     {Token::Tea, "Tea"},
     {Token::EndVector, "EndVector" },
     {Token::Begin, "BEGIN"},
-    {Token::End, "END"}
-
+    {Token::End, "END"},
+    {Token::Nuf, "NUF"}
 };
 
 inline std::string toLowerFunc(std::string str) {
@@ -168,6 +169,7 @@ inline std::map<std::string, Token> keywords = {
     std::make_pair(toLowerFunc("Repeat"), Token::Repeat),
     std::make_pair(toLowerFunc("Until"), Token::Until),
     std::make_pair(toLowerFunc("Tea"), Token::Tea),
+    std::make_pair(toLowerFunc("nuf"), Token::Nuf),
 
 };
 

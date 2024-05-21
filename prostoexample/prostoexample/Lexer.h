@@ -15,7 +15,7 @@ private:
     std::string currentLine;
     size_t currentPosition;
     std::vector<Token> tokenList;
-    Token token;
+    Token token = Token::Default;
     int count = 0;
     Token getNextToken() {
         token = tokenList[count++];
