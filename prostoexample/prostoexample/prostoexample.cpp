@@ -3,7 +3,7 @@
 
 int main()
 {
-    Lexer lexer("input.txt");
+    Lexer lexer("input_code.txt");
     std::vector<Token> tokenList;
 
     try {

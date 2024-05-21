@@ -1,0 +1,26 @@
+FUN MAIN
+CONST
+    ab : int = 23;
+    abc : int = ab
+NOC
+VAR
+    a, b, c : string;
+    de, l : int
+RAV
+BEGIN
+    READ(letter, dsjjks, sdjkds);
+    WRITE(djsdksdks, 'jdshds');
+    FOR I := (-a) TO (-(-a + -b) * -51 + -(-(-51)) + a + b)
+    DO
+      READ(a, b);
+      WRITE(a);
+    ENDFOR
+    IF (A <> D and B = E or C >= F and Z >= L) THEN
+      a := -(-a + -b) * -51 + -(-(-51)) + a + b - b
+      READ(a, b);
+      WRITE(a);  
+      ;
+      ;
+    FI
+END
+NUF

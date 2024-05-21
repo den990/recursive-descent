@@ -27,9 +27,6 @@ void Lexer::parseConsts() {
     if (GetToken() != Token::Main) {
         throw std::exception("Expected main at the beginning of the program");
     }
-    if (GetToken() != Token::Ident) {
-        throw std::exception("Expected identifier at the beginning of the program");
-    }
     Consts();
 }
 
@@ -586,8 +583,8 @@ void Lexer::parseVariables() {
 }
 
 void Lexer::parseSt() {
-    if (GetToken() != Token::OBracket) {
-        throw std::exception("expected {");
+    if (GetToken() != Token::Begin) {
+        throw std::exception("expected begin");
     }
 
     ListStms();
@@ -627,9 +624,10 @@ bool Lexer::MakeToken(std::string& word, int indexStr, size_t position, std::deq
 
     for (auto& item : keywords)
     {
-        size_t index = word.find(item.first);
-        if (index != std::string::npos)
+        size_t index;
+        if (word == item.first)
         {
+            index = 0;
             word.erase(index, item.first.size());
             std::string secondStr = word.substr(index, word.size() - index);
             word = word.substr(0, index);

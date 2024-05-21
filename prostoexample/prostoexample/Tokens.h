@@ -59,7 +59,9 @@ enum class Token {
     Repeat,
     Until,
     Tea,
-    EndVector
+    EndVector,
+    Begin, 
+    End
 };
 inline std::map<Token, std::string> tokenToString = {
     {Token::Const, "Const"},
@@ -82,20 +84,20 @@ inline std::map<Token, std::string> tokenToString = {
     {Token::Or, "Or"},
     {Token::And, "And"},
     {Token::Comma, "Comma"},
-    {Token::Noc, "Noc"},
+    {Token::Noc, "NOC"},
     {Token::Rav, "Rav"},
     {Token::If, "If"},
     {Token::Then, "Then"},
     {Token::Else, "Else"},
     {Token::Fi, "Fi"},
-    {Token::Endm, "Endm"},
+    {Token::Endm, "Endm"},//
     {Token::While, "While"},
     {Token::For, "For"},
     {Token::Write, "Write"},
     {Token::Read, "Read"},
     {Token::Do, "Do"},
-    {Token::Od, "Od"},
-    {Token::Rof, "Rof"},
+    {Token::Od, "Od"},//
+    {Token::Rof, "Rof"},//
     {Token::OpBracket, "OpBracket"},
     {Token::ClBracket, "ClBracket"},
     {Token::OBracket, "OBracket"},
@@ -105,11 +107,10 @@ inline std::map<Token, std::string> tokenToString = {
     {Token::Quote, "Quote"},
     {Token::Daer, "Daer"},
     {Token::Tirw, "Tirw"},
-    {Token::String, "String"},
-    {Token::Char, "Char"},
-    {Token::Noc, "Noc"},
+    {Token::String, "String"},//мб с маленькой
+    {Token::Char, "Char"},//
     {Token::Eof, "EOF"},
-    {Token::Main, "Main"},
+    {Token::Main, "FUNMAIN"},
     {Token::Default, "Default"},
     {Token::Colon, "Colon"},
     {Token::Case, "Case"},
@@ -118,7 +119,10 @@ inline std::map<Token, std::string> tokenToString = {
     {Token::Until, "Until"},
     {Token::Repeat, "Repeat"},
     {Token::Tea, "Tea"},
-    {Token::EndVector, "EndVector" }
+    {Token::EndVector, "EndVector" },
+    {Token::Begin, "BEGIN"},
+    {Token::End, "END"}
+
 };
 
 inline std::string toLowerFunc(std::string str) {
@@ -128,9 +132,12 @@ inline std::string toLowerFunc(std::string str) {
 
 inline std::map<std::string, Token> keywords = {
      std::make_pair(toLowerFunc("not"), Token::Not),
-    std::make_pair(toLowerFunc("main"), Token::Main),
+    std::make_pair(toLowerFunc("funmain"), Token::Main),
+    std::make_pair(toLowerFunc("begin"), Token::Begin),
+    std::make_pair(toLowerFunc("end"), Token::End),
     std::make_pair(toLowerFunc("int"), Token::Type),
     std::make_pair(toLowerFunc("char"), Token::Type),
+    std::make_pair(toLowerFunc("double"), Token::Type),
     std::make_pair(toLowerFunc("float"), Token::Type),
     std::make_pair(toLowerFunc("string"), Token::Type),
     std::make_pair(toLowerFunc("for"), Token::For),
@@ -160,7 +167,7 @@ inline std::map<std::string, Token> keywords = {
     std::make_pair(toLowerFunc("switch"), Token::Switch),
     std::make_pair(toLowerFunc("Repeat"), Token::Repeat),
     std::make_pair(toLowerFunc("Until"), Token::Until),
-     std::make_pair(toLowerFunc("Tea"), Token::Tea)
+    std::make_pair(toLowerFunc("Tea"), Token::Tea),
 
 };
 

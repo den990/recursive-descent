@@ -1,0 +1,45 @@
+FUNMAIN
+CONST 
+        double mathPI := 3.14;
+        float mathE := 2.718;
+        char sign := '-'
+NOC
+VAR  
+        int a := 1;
+        string address := "lol"
+RAV
+BEGIN
+        READ (input, letter) Daer;
+        WRITE (a) TIRW;
+	
+	        IF letter == '1' THEN
+		b := 15;
+		c := -11 + b;
+	ELSE
+		b := 11;
+		c := -11 + b;
+	ENDIF
+
+	address := "Avenu 123 St";
+	location := "Himiko";
+	
+	IF letter = '2' THEN
+		b := 16;
+		c := -12 + b;
+	ELSE 
+		IF letter = '3' THEN
+			b := 22;
+			c := 11 + b;
+		FI
+	FI
+
+	c := 21 * a + b;
+	
+	FOR I := 1 TO 21 DO
+		c := c + I * a;
+	ENDFOR
+
+	FOR J := 1 TO 50 DO
+		c := c + J * a;
+	ENDFOR
+END
