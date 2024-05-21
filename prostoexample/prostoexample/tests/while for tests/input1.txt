@@ -1,0 +1,16 @@
+main simpleProgram
+const string str1 := "Введите число ";
+      string str2 := "Числа от 1 до";
+      int zero := 0;
+      string colon := ":" noc
+var int number := 0 rav
+{
+
+while number < 10  
+do 
+   number := number + 9;
+od
+
+}
+endm
+endm

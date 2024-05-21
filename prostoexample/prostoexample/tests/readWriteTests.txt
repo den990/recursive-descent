@@ -1,0 +1,35 @@
+READ (a, b) DAER
+WRITE ('vot chto vveli: ', a, b) TIRW
+
+READ a, b) DAER
+"expected '('"
+
+READ (a b) DAER
+"expected 'Comma'"
+
+READ () DAER
+"expected 'Ident'"
+
+READ (a, b DAER
+"expected ')'"
+
+READ (a, b)
+"expected 'Daer'"
+
+WRITE 'vot chto vveli: ', a, b) TIRW
+"expected '('"k
+
+WRITE () TIRW
+"expected 'String' or 'Ident' or 'Char'"
+
+WRITE ('vot chto vveli: ', a, b TIRW
+"expected ')'"
+
+WRITE ('vot chto vveli: ', a, b)
+"expected 'Tirw'"
+
+WRITE ('vot chto vveli: ' a, b) TIRW
+"expected 'Comma'"			и так на все запятые. Источник: поверь мне брат
+
+WRITE (, a, b) TIRW
+"expected 'String' or 'Ident' or 'Char'"

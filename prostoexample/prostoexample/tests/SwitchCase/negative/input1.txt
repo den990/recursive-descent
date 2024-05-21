@@ -1,0 +1,14 @@
+main simpleProgram
+const string str1 := "Введите число ";
+      string str2 := "Числа от 1 до";
+      int zero := 0;
+      string colon := ":" noc
+var int number := 0 rav
+{
+
+switch number [
+]
+}
+endm
+while n < 10 do i := i+1; od
+endm

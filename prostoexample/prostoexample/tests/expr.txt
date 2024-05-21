@@ -1,0 +1,17 @@
+      int n := 6;
+      int n1 := n++ + --n;
+      string str1 := "Введите число ";
+      string str2 := "Числа от 1 до";
+      string colon := ":"; 
+      int k := a + 6 + 8;
+      int b := k * 6;
+      int c :=k / 6;
+      int a := -c;
+      int l := -(8 * 9) - a;
+      int j := (a * b *c) / k;
+      int w1 := m++;
+      int w2 := m--;
+      int w3 := ++m;
+      int w4 := --m;
+      int w5 := m++ + ++m;
+      int w6 := m-- - --m

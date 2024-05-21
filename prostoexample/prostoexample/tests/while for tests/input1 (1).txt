@@ -1,0 +1,15 @@
+main simpleProgram
+const string str1 := "Введите число ";
+      string str2 := "Числа от 1 до";
+      int zero := 0;
+      string colon := ":" noc
+var int number := 1 rav
+{
+
+while number < 10  
+do 
+   number := number * 2;
+
+}
+endm
+endm

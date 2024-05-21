@@ -1,0 +1,17 @@
+main simpleProgram
+const string str1 := "Введите число ";
+int n := ( ( 34 OR 12) and ( 43 or 21)) ;
+string str2 := "Числа от 1 до";
+string colon := ":" noc
+var int number:= 0 rav
+{
+write (str1, "kzkz" ) TIRW
+read (number, a) Daer
+for(int i := (i+1 * (i+ -1));i <= i+1 ; i++)
+write (str2, number, colon) TIRW;
+if (((A < B) OR ( A == B)) AND B) then write(i) tirw else write(i, ',') TIRW fi
+rof
+write("Программа завершена") TIRW
+while (a) do write(a) tirw od
+}
+endm
