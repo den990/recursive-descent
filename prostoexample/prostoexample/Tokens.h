@@ -29,7 +29,7 @@ enum class Token {
     If,
     Then,
     Else,
-    Fi,
+    EndIf,
     Endm,
     While,
     For,
@@ -37,7 +37,7 @@ enum class Token {
     Read,
     Do,
     Od,
-    Rof,
+    EndFor,
     OpBracket,
     ClBracket,
     OBracket,
@@ -89,7 +89,7 @@ inline std::map<Token, std::string> tokenToString = {
     {Token::If, "If"},
     {Token::Then, "Then"},
     {Token::Else, "Else"},
-    {Token::Fi, "Fi"},
+    {Token::EndIf, "ENDIF"},
     {Token::Endm, "Endm"},//
     {Token::While, "While"},
     {Token::For, "For"},
@@ -97,7 +97,7 @@ inline std::map<Token, std::string> tokenToString = {
     {Token::Read, "Read"},
     {Token::Do, "Do"},
     {Token::Od, "Od"},//
-    {Token::Rof, "Rof"},//
+    {Token::EndFor, "ENDFOR"},//
     {Token::OpBracket, "OpBracket"},
     {Token::ClBracket, "ClBracket"},
     {Token::OBracket, "OBracket"},
@@ -141,10 +141,10 @@ inline std::map<std::string, Token> keywords = {
     std::make_pair(toLowerFunc("float"), Token::Type),
     std::make_pair(toLowerFunc("string"), Token::Type),
     std::make_pair(toLowerFunc("for"), Token::For),
-    std::make_pair(toLowerFunc("rof"), Token::Rof),
+    std::make_pair(toLowerFunc("endfor"), Token::EndFor),
     std::make_pair(toLowerFunc("while"), Token::While),
     std::make_pair(toLowerFunc("if"), Token::If),
-    std::make_pair(toLowerFunc("fi"), Token::Fi),
+    std::make_pair(toLowerFunc("endif"), Token::EndIf),
     std::make_pair(toLowerFunc("else"), Token::Else),
     std::make_pair(toLowerFunc("then"), Token::Then),
     std::make_pair(toLowerFunc("const"), Token::Const),

@@ -11,35 +11,35 @@ RAV
 BEGIN
         READ (input, letter) Daer;
         WRITE (a) TIRW;
-	
-	        IF letter == '1' THEN
-		b := 15;
-		c := -11 + b;
-	ELSE
-		b := 11;
-		c := -11 + b;
-	ENDIF
+        IF (letter == '1') THEN
+                b := 15;
+                c := -11 + b;
+        ELSE
+                b := 11;
+                c := -11 + b;
+        ENDIF
 
-	address := "Avenu 123 St";
-	location := "Himiko";
+        address := "Avenu 123 St";
+        location := "Himiko";
 	
-	IF letter = '2' THEN
-		b := 16;
-		c := -12 + b;
-	ELSE 
-		IF letter = '3' THEN
-			b := 22;
-			c := 11 + b;
-		FI
-	FI
+        IF (letter == '2') THEN
+                b := 16;
+                c := -12 + b;
+        ELSE 
+                IF (letter == '3') THEN
+	                b := 22;
+                        c := 11 + b;
+                ENDIF
+        ENDIF
 
-	c := 21 * a + b;
+        c := 21 * a + b;
 	
-	FOR I := 1 TO 21 DO
-		c := c + I * a;
-	ENDFOR
-
-	FOR J := 1 TO 50 DO
-		c := c + J * a;
-	ENDFOR
+        FOR (int i := (i+1 * (i+ -1));i <= i+1 ; i++)
+                WRITE (str2, number, colon) TIRW;
+                IF (((A < B) OR ( A == B)) AND B) THEN 
+                    write(i) tirw 
+                ELSE 
+                    write(i, ',') TIRW 
+                ENDIF
+        ENDFOR
 END

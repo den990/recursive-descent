@@ -314,7 +314,7 @@ void Lexer::If()
     A();
 
 
-    if (token != Token::Fi)
+    if (token != Token::EndIf)
     {
         throw std::exception("excepted 'fi'");
     }
@@ -361,13 +361,13 @@ void Lexer::St()
     case Token::Endm:
         throw std::exception("expected }");
         break;
-    case Token::Rof:
+    case Token::EndFor:
         return;
         break;
     case Token::Od:
         return;
         break;
-    case Token::Fi:
+    case Token::EndIf:
         return;
         break;
     case Token::Tea:
@@ -380,6 +380,9 @@ void Lexer::St()
         return;
         break;
     case Token::Else:
+        return;
+        break;
+    case Token::End:
         return;
         break;
     default:
@@ -422,7 +425,7 @@ void Lexer::ListStmsElse()
 
     St();
 
-    if ((token != Token::Rof) && (token != Token::Od) && (token != Token::Fi) && (token != Token::Tea) && (token != Token::Else))
+    if ((token != Token::EndFor) && (token != Token::Od) && (token != Token::EndIf) && (token != Token::Tea) && (token != Token::Else))
     {
         if (count == tokenList.size())
         {
@@ -566,7 +569,7 @@ void Lexer::For()
     }
     Expr();
     ListStmsElse();
-    if (GetToken() != Token::Rof)
+    if (GetToken() != Token::EndFor)
     {
         throw std::exception("Expected 'rof'");
     }
