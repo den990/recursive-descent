@@ -105,11 +105,11 @@ void Lexer::ListSectionsConst()
         else if (token == Token::Semicolon)
             ListSectionsConst();
         else
-            throw std::exception(("expected Semicolon or Noc given " + tokenToString[token]).c_str());
+            throw std::exception(("expected Semicolon or NOC given " + tokenToString[token]).c_str());
 
     }
     else
-        throw std::exception(("expected Type or Noc given " + tokenToString[token]).c_str());
+        throw std::exception(("expected Type or NOC given " + tokenToString[token]).c_str());
 
 }
 
@@ -117,12 +117,12 @@ void Lexer::Consts()
 {
     if (GetToken() != Token::Const)
     {
-        throw std::exception(("expected Const given " + tokenToString[token]).c_str());
+        throw std::exception(("expected CONST given " + tokenToString[token]).c_str());
     }
     ListSectionsConst();
     if (token != Token::Noc)
     {
-        throw std::exception(("expected Noc given " + tokenToString[token]).c_str());
+        throw std::exception(("expected NOC given " + tokenToString[token]).c_str());
 
     }
 }
@@ -316,7 +316,7 @@ void Lexer::If()
 
     if (token != Token::EndIf)
     {
-        throw std::exception("excepted 'fi'");
+        throw std::exception("excepted 'FI'");
     }
 }
 
@@ -429,7 +429,7 @@ void Lexer::ListStmsElse()
     {
         if (count == tokenList.size())
         {
-            throw std::exception("expected do or rof");
+            throw std::exception("expected DO or ENDFOR");
         }
         ListStmsElse();
     }
