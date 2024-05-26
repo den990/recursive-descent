@@ -9,17 +9,8 @@ VAR
         string address := "lol"
 RAV
 BEGIN
-        READ(input, letter) DAER;
-        WRITE(a) TIRW;
-        IF (letter == '1') THEN
-                b := -(15);
-                c := -(-11.5 + b)+15+b;
-        ELSE
-                b := 11;
-                c := -11 + b;
-        ENDIF
-
-        address := "Avenu 123 St";
+        address := "Avenu 
+123 St"";
         location := "Himiko";
 	
         IF (letter == '2') THEN
@@ -43,5 +34,4 @@ BEGIN
                 ENDIF
         ENDFOR
 END
-FUN
-//fun разобраться, строковые константы на несколько строк и комментарии
+NUF

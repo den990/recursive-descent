@@ -62,7 +62,8 @@ enum class Token {
     EndVector,
     Begin, 
     End,
-    Nuf
+    Nuf,
+    Comment
 };
 inline std::map<Token, std::string> tokenToString = {
     {Token::Const, "Const"},
@@ -123,7 +124,8 @@ inline std::map<Token, std::string> tokenToString = {
     {Token::EndVector, "EndVector" },
     {Token::Begin, "BEGIN"},
     {Token::End, "END"},
-    {Token::Nuf, "NUF"}
+    {Token::Nuf, "NUF"},
+    {Token::Comment, "#"}
 };
 
 inline std::string toLowerFunc(std::string str) {

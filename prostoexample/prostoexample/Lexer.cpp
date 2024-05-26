@@ -316,7 +316,7 @@ void Lexer::If()
 
     if (token != Token::EndIf)
     {
-        throw std::exception("excepted 'FI'");
+        throw std::exception("excepted 'ENDIF'");
     }
 }
 
@@ -592,7 +592,7 @@ void Lexer::parseSt() {
 
     ListStms();
 
-    if (GetToken() != Token::Nuf) {
+    if (count >= tokenList.size() || GetToken() != Token::Nuf) {
         throw std::exception("expected NUF");
     }
     if (GetMoreTokens() != Token::EndVector) {
@@ -811,6 +811,19 @@ void Lexer::printTokens(const std::vector<Token>& tokenList) {
     }
 }
 
+size_t Lexer::CountDoubleQuotes(const std::string& str)
+{
+    size_t count = 0;
+    for (char ch : str)
+    {
+        if (ch == '"')
+        {
+            ++count;
+        }
+    }
+    return count;
+}
+
 void Lexer::Process(std::ifstream& input, std::ofstream& output, std::vector<Token>& tokenList) {
     std::string inputStr, inputString;
     int indexStr = 1;
@@ -818,6 +831,17 @@ void Lexer::Process(std::ifstream& input, std::ofstream& output, std::vector<Tok
     while (getline(input, inputStr)) {
         if (inputStr.empty()) {
             continue;
+        }
+        if (inputStr.find("\"") != std::string::npos)
+        {
+            size_t count = CountDoubleQuotes(inputStr);
+            while (count < 2)
+            {
+                std::string str;
+                getline(input, str);
+                inputStr += str;
+                count = CountDoubleQuotes(inputStr);
+            }
         }
         inputString = toLowerFunc(inputStr);
         ProcessStr(input, inputString, indexStr, output, tokenList);

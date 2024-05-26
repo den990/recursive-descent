@@ -73,4 +73,5 @@ public:
     void CaseBody();
     void SwitchCaseBlock();
     void SwitchCase();
+    size_t CountDoubleQuotes(const std::string& str);
 };
